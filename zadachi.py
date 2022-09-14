@@ -42,9 +42,29 @@
 # - 3 -> 11
 # - 2 -> 10
 
-n = int(input('Введите число: '))
-number = ''
-while n > 0:
-    number = number + str(n % 2)
-    n = n // 2
-print(number)
+# n = int(input('Введите число: '))
+# number = ''
+# while n > 0:
+#     number = number + str(n % 2)
+#     n = n // 2
+# print(number)
+
+
+#  5.Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+# Пример:
+# #- для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
+
+number = int(input('Введите число: '))
+def fibonachi(num):
+    fibo = []
+    n1, n2 = 1, 1
+    for _ in range(num):
+        fibo.append(n1)
+        n1, n2 = n2, n1 + n2
+    n1, n2 = 0, 1
+    for _ in range(num+1):
+        fibo.insert(0, n1)
+        n1, n2 = n2, n1 - n2
+    return fibo
+print(fibonachi(number))
+# 

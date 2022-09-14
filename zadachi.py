@@ -34,3 +34,17 @@
 #     elif (divmod(i, 1))[1] < min and (divmod(i, 1))[1] != 0:
 #         min = (divmod(i, 1))[1]
 # print(round(max - min, 2))
+
+# 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+n = int(input('Введите число: '))
+number = ''
+while n > 0:
+    number = number + str(n % 2)
+    n = n // 2
+print(number)
